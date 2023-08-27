@@ -5,64 +5,72 @@
     <meta charset="UTF-8">
     <title>Restaurante Morte Lenta</title>
     <style>
+        /* Reset de margens, preenchimentos e box-sizing para todos os elementos */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        /* Importar fonte OnePiece */
         @font-face {
-            /*Fonte do titulo*/
             font-family: 'OnePiece';
             src: url('src/fonts/one piece font.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
         }
 
+        /* Importar fonte Inter do Google Fonts */
         @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
-        /*Fonte do body*/
 
+        /* Estilos do cabeçalho */
         header {
             display: flex;
             background-color: #DAA520;
             align-items: center;
             justify-content: space-between;
             padding: 28px;
-            /*Alinha no meio, coloca o cabeçalho e a logo nos cantos e dá um espaço da box pra borda*/
             border-bottom: 4px solid #e85050;
             font-family: 'OnePiece', Times, serif;
-            font-size: 3em
-                /*Borda embaixo, fonte OnePiece e tamanho da fonte*/
+            font-size: 3em;
         }
 
+        /* Estilo para o texto do cabeçalho */
         header p {
             background-color: #f0f0f0;
             border: 4px solid #e85050;
             border-radius: 20px;
-            /*Borda redonda e fundo branco*/
         }
 
+        /* Estilos da logo */
+        header .bug {
+            font-family: 'OnePiece', Times, serif;
+            font-size: 40px;
+        }
+
+        /* Estilos da logo */
         #logo {
             width: 3em;
-            /*Tamanho da logo*/
             background-color: #f0f0f0;
             border: 4px solid #e85050;
             border-radius: 50%;
             padding: 2px;
-            /*Borda redonda, fundo branco e espaço interno da borda*/
         }
 
+        /* Estilos do subtítulo "Cardápio" */
         .cardapio {
-            font-family: 'OnePiece', 'Inter', serif;
-            font-size: 2em;
+            font-family: 'OnePiece', Times, serif;
+            font-size: 1em;
         }
 
+        /* Estilos do container principal */
         .container {
             text-align: center;
             margin: 20px;
             font-family: 'Inter', sans-serif;
         }
 
+        /* Estilos da tabela */
         table {
             border: 2px solid black;
             width: 100%;
@@ -71,12 +79,14 @@
             border-collapse: collapse;
         }
 
+        /* Estilos das células da tabela */
         th,
         td {
             border: 1px solid black;
             padding: 8px;
         }
 
+        /* Estilos para a exibição dos sabores dos pratos */
         .sabores {
             border: 1px solid black;
             padding: 2px;
@@ -84,6 +94,7 @@
             background: #e38e7b;
         }
 
+        /* Estilos para a primeira linha da tabela */
         #primeiro {
             background: #e95050;
             color: white;
@@ -91,30 +102,33 @@
             font-size: 1.2em;
         }
 
+        /* Estilos para as linhas ímpares da tabela */
         tr:nth-child(even) {
             background: #e86749;
         }
 
+        /* Estilos para linhas quando o mouse passa sobre elas */
         tr:hover {
             background-color: bisque;
         }
 
+        /* Estilos para células com tooltip */
         td {
             position: relative;
         }
 
+        /* Estilos do tooltip */
         .listinha {
             display: none;
-            /* Inicialmente, o tooltip está oculto */
+            /* Inicialmente, os sabores estão ocultos */
             position: absolute;
-            /* Posiciona o tooltip de forma absoluta em relação ao elemento pai */
+            /* Posiciona o tooltip de forma absoluta em relação ao Saiba mais */
             background-color: #f0f0f0;
             padding: 5px;
             border: 1px solid #ccc;
             border-radius: 5px;
             width: 150px;
             top: -25px;
-            /* Posiciona o tooltip verticalmente no centro do elemento pai */
             left: -160px;
             /* Posiciona o tooltip à esquerda do elemento pai */
             transform: translateY(-50%);
@@ -126,18 +140,28 @@
             display: block;
             /* Exibir o tooltip quando o mouse estiver sobre a célula */
         }
+
+        /* Media query para esconder o p em telas menores */
+        @media screen and (max-width: 768px) {
+            header .bug {
+                display: none;
+            }
+        }
     </style>
 </head>
 
 <body>
     <header>
         <p class="titulo">RESTAURANTE MORTE LENTA</p>
-        <img id="logo" src="./src/image/sanjiCaveira.png" alt="logo" href="http">
+        <a href="http://d3v0urh0p3.github.io/restaurante-morte-lenta" target="_blank">
+            <img id="logo" src="./src/image/sanjiCaveira.png" alt="logo">
+        </a>
     </header>
     <hr>
-
     <div class="container">
-        <p class="cardapio">CARDAPIO</p>
+        <h1>
+            <div class="cardapio">CARDAPIO</div>
+        </h1>
         <table>
             <tr id="primeiro">
                 <th>Prato</th>
@@ -168,6 +192,7 @@
                             <ul class="sabores">Risoto de Cogumelos R$48,00</ul>
                             <ul class="sabores">Mignon com Vinho Tinto R$60,00</ul>
                         </ul>
+                    </div>
                 </td>
             </tr>
             <tr>
@@ -177,9 +202,6 @@
             <tr>
                 <td>Mandioca Frita</td>
                 <td>R$ 12,00</td>
-            </tr>
-            <tr>
-                <td>Salada</td>
             </tr>
         </table>
     </div>
