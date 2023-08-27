@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurante Morte Lenta</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @font-face {
+            /*Fonte do titulo*/
+            font-family: 'OnePiece';
+            src: url('src/fonts/one piece font.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+        /*Fonte do body*/
+
+        header {
+            display: flex;
+            background-color: #DAA520;
+            align-items: center;
+            justify-content: space-between;
+            padding: 28px;
+            /*Alinha no meio, coloca o cabeçalho e a logo nos cantos e dá um espaço da box pra borda*/
+            border-bottom: 4px solid #e85050;
+            font-family: 'OnePiece', Times, serif;
+            font-size: 3em
+                /*Borda embaixo, fonte OnePiece e tamanho da fonte*/
+        }
+
+        header p {
+            background-color: #f0f0f0;
+            border: 4px solid #e85050;
+            border-radius: 20px;
+            /*Borda redonda e fundo branco*/
+        }
+
+        #logo {
+            width: 3em;
+            /*Tamanho da logo*/
+            background-color: #f0f0f0;
+            border: 4px solid #e85050;
+            border-radius: 50%;
+            padding: 2px;
+            /*Borda redonda, fundo branco e espaço interno da borda*/
+        }
+
+        .cardapio {
+            font-family: 'OnePiece', 'Inter', serif;
+            font-size: 2em;
+        }
+
+        .container {
+            text-align: center;
+            margin: 20px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        table {
+            border: 2px solid black;
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+
+        .sabores {
+            border: 1px solid black;
+            padding: 2px;
+            border-radius: 6px;
+            background: #e38e7b;
+        }
+
+        #primeiro {
+            background: #e95050;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        tr:nth-child(even) {
+            background: #e86749;
+        }
+
+        tr:hover {
+            background-color: bisque;
+        }
+
+        td {
+            position: relative;
+        }
+
+        .listinha {
+            display: none;
+            /* Inicialmente, o tooltip está oculto */
+            position: absolute;
+            /* Posiciona o tooltip de forma absoluta em relação ao elemento pai */
+            background-color: #f0f0f0;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 150px;
+            top: -25px;
+            /* Posiciona o tooltip verticalmente no centro do elemento pai */
+            left: -160px;
+            /* Posiciona o tooltip à esquerda do elemento pai */
+            transform: translateY(-50%);
+            /* Centraliza verticalmente o tooltip */
+        }
+
+        /* Mostrar o tooltip quando passar o mouse sobre a célula */
+        td:hover .listinha {
+            display: block;
+            /* Exibir o tooltip quando o mouse estiver sobre a célula */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <p class="titulo">RESTAURANTE MORTE LENTA</p>
+        <img id="logo" src="./src/image/sanjiCaveira.png" alt="logo" href="http">
+    </header>
+    <hr>
+
+    <div class="container">
+        <p class="cardapio">CARDAPIO</p>
+        <table>
+            <tr id="primeiro">
+                <th>Prato</th>
+                <th>Preço (R$)</th>
+            </tr>
+            <tr>
+                <td>Sarrabulho</td>
+                <td>R$ 8,00</td>
+            </tr>
+            <tr>
+                <td>Espinafre do Popeye</td>
+                <td>R$ 6,00</td>
+            </tr>
+            <tr>
+                <td>Combo X-AVC</td>
+                <td>R$ 31,00</td>
+            </tr>
+            <tr>
+                <td>Takoyaki</td>
+                <td>R$ 15,00</td>
+            </tr>
+            <tr>
+                <td>Panelinha</td>
+                <td>Saiba mais
+                    <div class="listinha">
+                        <ul>
+                            <ul class="sabores">Frango com Legumes e Curry R$36,00</ul>
+                            <ul class="sabores">Risoto de Cogumelos R$48,00</ul>
+                            <ul class="sabores">Mignon com Vinho Tinto R$60,00</ul>
+                        </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>Espetinho Língua</td>
+                <td>R$ 20,00</td>
+            </tr>
+            <tr>
+                <td>Mandioca Frita</td>
+                <td>R$ 12,00</td>
+            </tr>
+            <tr>
+                <td>Salada</td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>
